@@ -1,0 +1,22 @@
+# 
+sudo chmod +x execute.sh build.sh
+
+sudo sh ./execute.sh
+
+psql -h localhost -p 35432 -d skoda-postgres -U root
+
+\q
+
+Copy (select tripid*-1, tripid*-1,  st_y(endpoint), st_x(endpoint) from startend) To '/var/lib/postgresql/test.csv' With CSV DELIMITER ',';
+
+Copy (select (tripid+1)*-1, (tripid+1)*-1, st_y(endpoint), st_x(endpoint) from startend) To '/var/lib/postgresql/end.csv' With CSV DELIMITER ',';
+
+Copy (select (tripid+1), (tripid+1),  st_y(startpoint), st_x(startpoint) from startend) To '/var/lib/postgresql/start.csv' With CSV DELIMITER ',';
+
+
+select date_trunc('day', datefrom) as day, count(1) from carsharing group by 1 order by day;
+
+chargeable (TripID integer, CarID integer, end_geom geometry, start_geom geometry, end_time timestamp, start_time timestamp)
+
+
+SELECT * FROM chargeable WHERE ST_DWithin(end_geom::geography, start_geom::geography, 100);  
