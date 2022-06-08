@@ -1,4 +1,5 @@
-# Repo was migrated to AICenter github (ev_db repo)
+# Intro
+The study of corporate car fleet was part of my university project that preceded my bachelor thesis. The goal was to explore GPS data given by Škoda Auto fleet management. In the following years, a massive transition to electric vehicles is expected to take place. With the anticipation of those changes, fleet managers wanted insight into how a normal day for the electric car fleet would look. We extracted trends in ride lengths, ride duration and parking durations to model the fleet's behaviour in a different setting.
 
 # Docker Tutorial
 Toto je krátký návod pro používání SQL-based databáze pro potřebu spolupráce mezi Škoda Auto a AIC. Databáze běží ve virtuálně v Dockeru. Pro získání dat k databází je nutné napsat Martinovi Schaeferovi (martin.schaefer@fel.cvut.cz), neboť data nemohou být volně k dispozici. Všechny kódy jsou umístěny v mém GIT repozitáři.
